@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :schools
   get 'rankings/index'
   get 'about/index'
 	get "/" => "homes#top"
