@@ -1,22 +1,30 @@
-<%= form_with(model: school, local: true) do |form| %>
-  <% if school.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(school.errors.count, "error") %> prohibited this school from being saved:</h2>
-
-      <ul>
-      <% school.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for(@school) do |f| %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= f.label :name, "スクール名" %><br>
+    <%= f.text_field :name %>
   </div>
-
+  <div class="field">
+    <%= f.label :company_list, "運営会社名" %><br>
+    <%= text_field_tag 'school[company_list]', @school.company_list.join(',') %>
+  </div>
+  <div class="field">
+    <%= f.label :purpose_list, "受講目的（カンマ区切り）" %><br>
+    <%= text_field_tag 'school[purpose_list]', @school.purpose_list.join(',') %>
+  </div>
+    <div class="field">
+    <%= f.label :style_list, "受講スタイル（カンマ区切り）" %><br>
+    <%= text_field_tag 'school[style_list]', @school.style_list.join(',') %>
+  </div>
+  <div class="field">
+    <%= f.label :status_list, "対応生徒（カンマ区切り）" %><br>
+    <%= text_field_tag 'school[status_list]', @school.status_list.join(',') %>
+  </div>
+    <div class="field">
+    <%= f.label :course_list, "コース（カンマ区切り）" %><br>
+    <%= text_field_tag 'school[course_list]', @school.course_list.join(',') %>
+  </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>
