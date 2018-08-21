@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>スクール名:</strong>
+  <%= @school.name %>
+  <br>
+  <strong>運営会社名:</strong>
+  <%= @school.company_list %>
+  <br>
+  <strong>受講目的:</strong>
+  <%= @school.purpose_list %>
+  <br>
+  <strong>受講スタイル:</strong>
+  <%= @school.style_list %>
+  <br>
+  <strong>対象生徒:</strong>
+  <%= @school.status_list %>
+  <br>
+  <strong>コース:</strong>
+  <%= @school.course_list %>
+</p>
+
+<%= link_to 'Edit', edit_school_path(@school) %> |
+<%= link_to 'Back', schools_path %>
+

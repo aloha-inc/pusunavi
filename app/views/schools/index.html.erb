@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<div> 
+  <%= form_tag(schools_path, method: "get") do %>
+  <%= label_tag :name, "スクール名から探す" %><%= text_field_tag :name, params[:name] %>
+  <%= submit_tag "検索" %>
+  <% end %>
+</div>
+
+
+<h1>登録スクール一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>スクール名</th>
+      <th>運営会社名</th>
+      <th>受講目的</th>
+      <th>受講スタイル</th>
+      <th>対象生徒</th>
+      <th>コース</th>
+      <th colspan="8"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schools.each do |school| %>
+      <tr>
+        <td> <%= school.name %>  </td>
+        <td><%= render 'schools_tag_list', tag_list: school.company_list %></td>
+        <td><%= render 'schools_tag_list', tag_list: school.purpose_list %></td>
+        <td><%= render 'schools_tag_list', tag_list: school.style_list %></td>
+        <td><%= render 'schools_tag_list', tag_list: school.status_list %></td>
+        <td><%= render 'schools_tag_list', tag_list: school.course_list %></td>
+        <td><%= link_to 'Show', school %></td>
+        <td><%= link_to 'Edit', edit_school_path(school) %></td>
+        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規登録をする', new_school_path %>
