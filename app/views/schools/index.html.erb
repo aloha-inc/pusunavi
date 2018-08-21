@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<div> 
+  <%= form_tag(schools_path, method: "get") do %>
+  <%= label_tag :name, "スクール名から探す" %><%= text_field_tag :name, params[:name] %>
+  <%= submit_tag "検索" %>
+  <% end %>
+</div>
+
+
 <h1>登録スクール一覧</h1>
 
 <table>
@@ -34,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New School', new_school_path %>
+<%= link_to '新規登録をする', new_school_path %>

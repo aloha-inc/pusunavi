@@ -5,6 +5,10 @@ class SchoolsController < ApplicationController
   # GET /schools.json
   def index
     @schools = School.all
+
+    if params[:name].present? 
+      @schools = @schools.get_by_name params[:name]
+    end
   end
 
   # GET /schools/1
