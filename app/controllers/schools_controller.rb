@@ -5,9 +5,14 @@ class SchoolsController < ApplicationController
   # GET /schools.json
   def index
     @schools = School.all
+    @courses_list = @schools.tag_counts_on(:courses).map(&:name)
 
     if params[:name].present? 
       @schools = @schools.get_by_name params[:name]
+    end
+
+    if params[:course_list].present?
+      @schools = @schools.get_by_course_list params[:course_list]
     end
   end
 
