@@ -12,7 +12,7 @@ class SchoolsController < ApplicationController
     end
 
     if params[:course_list].present?
-      @schools = @schools.get_by_course_list params[:course_list]
+    @schools = @schools.get_by_course_list params[:course_list]
     end
   end
 

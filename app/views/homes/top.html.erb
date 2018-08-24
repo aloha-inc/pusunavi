@@ -12,24 +12,25 @@
     <header>
       <div class="container">
         <div class="header-left">
+
           <!--
           <div class="logo">
           	<%= link_to image_tag("pusunavi-logo.png"), :action => "top" %>
           </div>
           -->
-          <a href="#">PUSUNAVI</a> 
+          <a href="/">PUSUCON</a> 
           
         </div>
-        <!-- ここにメニューアイコンを追加してください -->
+        <!-- ここにメニューアイコンを追加 -->
         <span class="fa fa-bars menu-icon"></span>
 
         <div class="header-right">
           <a href="#">スクールを探す</a>
-          <a href="#">ランキングから探す</a>
-          <a href="#">スクール一覧</a>
-          <a href="#">プスナビについて</a>
+          <a href="/rankings">ランキングから探す</a>
+          <a href="/schools">スクール一覧</a>
+          <a href="/about">プスコンについて</a>
           <a href="#">口コミを見る</a>
-          <a href="#">BLOG</a>
+          <a href="http://pusucon.local/">BLOG</a>
           <!-- <a href="#" class="login">ログイン</a> -->
         </div>
       </div>
@@ -38,7 +39,7 @@
       <div class="container">
         <h1>LET'S CHANGE YOUR LIFE</h1>
         <h1>WITH PROGRAMMING.</h1>
-        <p>プスナビはプログラミングスクールを探せるサービスです。</p>
+        <p>プスコンはプログラミングスクールを探せるサービスです。</p>
         <p>あなたの目的に合ったおすすめのスクールを探すことができます。</p>
         <div class="btn-wrapper">
           <a href="#" class="btn signup">スクールを探す</a>
@@ -48,6 +49,69 @@
         </div>
       </div>
     </div>
+
+
+<div class="album py-5 bg-light">
+        <div class="container">
+        <h2>総合ランキング</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top"> <%= image_tag 'TECH-AAA.png'%>
+                <div class="card-body"> 
+                  <h5 class="card-title">第1位　テックAAA</h5>
+                  <span class="badge badge-pill badge-danger">教室・オンライン両方</span>
+
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-danger my-2">詳細</button>
+                      <button type="button" class="btn btn-success my-2">カート</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top"><%= image_tag 'TECH-BBB.png'%>
+                <div class="card-body">
+                  <h5 class="card-title">第2位　テックBBB </h5>
+                  <span class="badge badge-pill badge-danger">教室・オンライン両方</span>
+                  
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-danger my-2">詳細</button>
+                      <button type="button" class="btn btn-success my-2">カート</button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top"><%= image_tag 'TECH-CCC.png'%>
+                <div class="card-body">
+                  <h5 class="card-title">第3位　テックCCC</h5>
+                  <span class="badge badge-pill badge-danger">オンラインのみ</span>
+                  
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-danger my-2">詳細</button>
+                      <button type="button" class="btn btn-success my-2">カート</button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
     <div class="lesson-wrapper">
       <div class="container">
         <div class="heading">
