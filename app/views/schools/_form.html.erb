@@ -1,4 +1,36 @@
 <%= form_for(@school) do |f| %>
+  <div class="form-group">
+    <%= f.label :school, "スクール名" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :school, "運営会社名" %>
+    <%= f.text_field :company_list, value: @school.company_list.join(','), class: "form-control" %>
+  </div>
+    <div class="form-group">
+    <%= f.label :school, "受講目的（カンマ区切り）" %>
+    <%= f.text_field :purpose_list, value: @school.purpose_list.join(','), class: "form-control" %>
+  </div>
+    <div class="form-group">
+    <%= f.label :school, "受講スタイル（カンマ区切り）" %>
+    <%= f.text_field :style_list, value: @school.style_list.join(','), class: "form-control" %>
+  </div>
+    <div class="form-group">
+    <%= f.label :school, "対応生徒（カンマ区切り）" %>
+    <%= f.text_field :status_list, value: @school.status_list.join(','), class: "form-control" %>
+  </div>
+    <div class="form-group">
+    <%= f.label :school, "コース（カンマ区切り）" %>
+    <%= f.text_field :course_list, value: @school.course_list.join(','), class: "form-control" %>
+  </div>
+  <div class="pull-right">
+    <%= f.submit '登録する', class: "btn btn-info" %>
+  </div>
+<% end %>
+
+
+<!--
+<%= form_for(@school) do |f| %>
 
   <div class="field">
     <%= f.label :name, "スクール名" %><br>
@@ -28,3 +60,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+-->
