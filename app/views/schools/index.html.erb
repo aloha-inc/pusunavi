@@ -8,7 +8,8 @@
 </div>
 
 <%= form_tag(schools_path, method: "get") do %>
-<%= select_tag :course_list, options_for_select(@courses_list),  :include_blank => true %>
+<%= select_tag :course_list, options_for_select(@courses_list, :selected => @course_tag),  :include_blank => false %>
+<%= select_tag :purpose_list, options_for_select(@purposes_list, :selected => @purpose_tag),  :include_blank => false %>
 <%= submit_tag "検索" %>
 <% end %>
 
